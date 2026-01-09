@@ -1,10 +1,28 @@
 #include <vector>
 using namespace std;
 
+class ListNode;
 
 
 
 
+struct ReverseLinkedList{
+    ListNode* reverseList(ListNode* head) {
+
+        ListNode* prev = nullptr;
+        ListNode* cur = head;
+
+        while(cur) {
+            auto next = cur->next;
+            cur->next = prev;
+            prev = cur;
+            cur = next;
+        }
+
+        return prev;
+        
+    }
+}
 
 
 struct Teemo_Attacking {
